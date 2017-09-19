@@ -273,18 +273,21 @@ type Local struct {
 	Current CurrentCondition  `xml:"current_condition"`
 	Request Request           `xml:"request"`
 	Weather []ForecastWeather `xml:"weather"`
+	Error   *string           `xml:"error>msg"`
 }
 
 type Marine struct {
 	Request Request         `xml:"request"`
 	Area    Area            `xml:"nearest_area"`
 	Weather []MarineWeather `xml:"weather"`
+	Error   *string         `xml:"error>msg"`
 }
 
 type PastLocal struct {
 	Request Request   `xml:"request"`
 	Area    Area      `xml:"nearest_area"`
 	Weather []Weather `xml:"weather"`
+	Error   *string   `xml:"error>msg"`
 }
 
 type PastMarine Marine
@@ -293,14 +296,17 @@ type Ski struct {
 	Request Request      `xml:"request"`
 	Area    Area         `xml:"nearest_area"`
 	Weather []SkiWeather `xml:"weather"`
+	Error   *string      `xml:"error>msg"`
 }
 
 type TimeZone struct {
 	Request Request `xml:"request"`
 	Area    Area    `xml:"nearest_area"`
 	Zone    Zone    `xml:"time_zone"`
+	Error   *string `xml:"error>msg"`
 }
 
 type Search struct {
-	Area []Area `xml:"result"`
+	Area  []Area  `xml:"result"`
+	Error *string `xml:"error>msg"`
 }
