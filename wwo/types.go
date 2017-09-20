@@ -1,9 +1,11 @@
 package wwo
 
-import "time"
-import "strings"
-import "strconv"
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"strconv"
+	"strings"
+	"time"
+)
 
 type Date time.Time
 
@@ -15,6 +17,10 @@ func (t *Date) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	ti, err := time.Parse("2006-01-02", content)
 	*t = Date(ti)
 	return err
+}
+
+func (t Date) String() string {
+	return time.Time(t).Format("2006-01-02")
 }
 
 type Time12 time.Duration
@@ -36,6 +42,10 @@ func (t *Time12) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	return err
 }
 
+func (t Time12) String() string {
+	return (time.Time{}).Add(time.Duration(t)).Format("15:04")
+}
+
 type TimeHMM time.Duration
 
 func (t *TimeHMM) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
@@ -47,6 +57,10 @@ func (t *TimeHMM) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	h, m := u/100, u%100
 	*t = TimeHMM(time.Duration(h)*time.Hour + time.Duration(m)*time.Minute)
 	return err
+}
+
+func (t TimeHMM) String() string {
+	return (time.Time{}).Add(time.Duration(t)).Format("15:04")
 }
 
 type Request struct {
