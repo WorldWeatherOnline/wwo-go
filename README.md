@@ -5,7 +5,7 @@ This is a Go library for the worldweatheronline.com APIs.
 ## Installing
 
 ```sh
-go get github.com/worldweatheronline/go/wwo
+go get github.com/worldweatheronline/wwo-go/wwo
 ```
 
 ## Usage

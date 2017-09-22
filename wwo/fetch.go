@@ -201,4 +201,3 @@ func (w *WWO) GetTimeZone(location string, opt map[string]string) (*TimeZone, er
 
 	return o, nil
 }
-

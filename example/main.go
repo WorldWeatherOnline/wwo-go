@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/worldweatheronline/go/wwo"
+	"github.com/worldweatheronline/wwo-go/wwo"
 	"os"
 )
 
