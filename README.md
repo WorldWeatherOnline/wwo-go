@@ -10,7 +10,7 @@ go get github.com/worldweatheronline/wwo-go/wwo
 
 ## Usage
 
-For more details see the example application in [example/main.go](https://github.com/WorldWeatherOnline/wwo-go/blob/master/example/main.go) and [documentation](https://godoc.org/github.com/WorldWeatherOnline/wwwo-go/woo).
+For more details see the example application in [example/main.go](https://github.com/WorldWeatherOnline/wwo-go/blob/master/example/main.go) and [documentation](https://godoc.org/github.com/WorldWeatherOnline/wwo-go/wwo).
 
 ```go
 var weather = WWO({"your-hex-api-key-goes-in-here!"})

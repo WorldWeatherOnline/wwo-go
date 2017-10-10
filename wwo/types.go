@@ -80,7 +80,7 @@ type Area struct {
 	Name       string  `xml:"areaName"`
 	Region     string  `xml:"region"`
 	Population uint    `xml:"population"`     //      Location's population
-	Distance   float64 `xml:"distance_miles"` // mi   Distance between query point and this area
+	DistanceMI float64 `xml:"distance_miles"` // mi   Distance between query point and this area
 	WeatherURL string  `xml:"weatherUrl"`
 	Zone       *Zone   `xml:"timezone"`
 }
